@@ -1,0 +1,303 @@
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Background Container */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: #9c5b23;
+}
+
+/* Base Gradient - Warm Wine-Red (from screenshot) */
+.hero-gradient-base {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(165deg, #3b3b2a 0%, #0a0a09 40%, #1a0908 65%, #2b0a08 100%);
+}
+
+/* Warm Amber Glow */
+.hero-glow-amber {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 163, 61, 0.14) 0%, rgba(232, 163, 61, 0.04) 40%, transparent 70%);
+}
+
+@media (min-width: 768px) {
+  .hero-glow-amber {
+    width: 45vw;
+  }
+}
+
+/* Tally-Red Rim Light */
+.hero-glow-tally {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translate(25%, 25%);
+  background: radial-gradient(circle, rgba(232, 68, 44, 0.22) 0%, rgba(232, 68, 44, 0.06) 45%, transparent 70%);
+}
+
+@media (min-width: 768px) {
+  .hero-glow-tally {
+    width: 35vw;
+  }
+}
+
+/* Vignette */
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, transparent 35%, #0a0a09 92%);
+}
+
+/* Grain Texture */
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Corner Reticle */
+.hero-reticle {
+  display: none;
+  position: absolute;
+  inset: 1.5rem;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .hero-reticle {
+    display: block;
+  }
+}
+
+.reticle-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-top: 1px solid rgba(243, 241, 234, 0.3);
+  border-left: 1px solid rgba(243, 241, 234, 0.3);
+}
+
+.reticle-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-top: 1px solid rgba(243, 241, 234, 0.3);
+  border-right: 1px solid rgba(243, 241, 234, 0.3);
+}
+
+.reticle-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-bottom: 1px solid rgba(243, 241, 234, 0.3);
+  border-left: 1px solid rgba(243, 241, 234, 0.3);
+}
+
+.reticle-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-bottom: 1px solid rgba(243, 241, 234, 0.3);
+  border-right: 1px solid rgba(243, 241, 234, 0.3);
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1.5rem 4rem;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    padding: 0 2.5rem 5rem;
+  }
+}
+
+.hero-location {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #8c887f;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  font-size: 15vw;
+  color: #f3f1ea;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 8.5vw;
+  }
+}
+
+.hero-subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  color: #8c887f;
+  margin-top: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.875rem;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.btn-primary {
+  padding: 1rem 1.75rem;
+  background: #f3f1ea;
+  color: #0a0a09;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: #e8442c;
+  color: #f3f1ea;
+}
+
+.btn-secondary {
+  padding: 1rem 1.75rem;
+  background: transparent;
+  color: #f3f1ea;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: 1px solid rgba(243, 241, 234, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #f3f1ea;
+}
+/* Add these styles to Hero.css */
+
+/* Left-to-Right Gradient with Animation */
+.hero-gradient-base {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0a0a09 0%, #1a0a0a 30%, #241010 60%, #2d1515 100%);
+  animation: gradientShift 8s ease-in-out infinite alternate;
+}
+
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(90deg, #0a0a09 0%, #1a0a0a 30%, #241010 60%, #2d1515 100%);
+  }
+  33% {
+    background: linear-gradient(90deg, #0a0a09 0%, #150808 25%, #241010 55%, #2d1515 85%, #3a1a1a 100%);
+  }
+  66% {
+    background: linear-gradient(90deg, #0a0a09 0%, #1a0a0a 35%, #2d1010 65%, #3a1515 100%);
+  }
+  100% {
+    background: linear-gradient(90deg, #0a0a09 0%, #1a0a0a 30%, #241010 60%, #2d1515 100%);
+  }
+}
+
+/* Enhanced Glow Effects */
+.hero-glow-amber {
+  background: radial-gradient(circle, rgba(232, 154, 37, 0.15) 0%, rgba(232, 163, 61, 0.04) 40%, transparent 70%);
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Add floating gradient overlay for depth */
+.hero-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(207, 26, 26, 0.3) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Warm Light Ray Effect */
+.light-ray {
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(135deg, transparent 40%, rgba(232, 163, 61, 0.03) 50%, transparent 60%);
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: lightRayMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes lightRayMove {
+  0% {
+    transform: rotate(20deg) translateX(-10%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(30deg) translateX(10%);
+    opacity: 1;
+  }
+}
